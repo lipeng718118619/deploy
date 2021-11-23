@@ -5,10 +5,8 @@ services:
     image: nginx
     restart: always
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - /etc/nginx:/etc/nginx
       - /var/log/nginx:/var/log/nginx
-      - /opt/dist:/opt/dist:ro
     ports:
       - "80:80"
       - "443:443"
@@ -45,17 +43,5 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - /Users/honddy/data/mysql:/var/lib/mysql
-  portainer:
-    image: portainer/portainer-ce:2.9.2
-    container_name: portainer
-    ports:
-      - "9443:9443"
-      - "9000:9000"
-      - "8000:8000"
-    volumes:
-      - portainer_data:/data
-      - "/var/run/docker.sock:/var/run/docker.sock"
-volumes:
-  portainer_data:
 
 # docker-compose -f ./compose-nginx.yaml up -d
