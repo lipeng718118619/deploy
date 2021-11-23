@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /etc/nginx/conf.d:/etc/nginx/conf.d
+      - /etc/nginx:/etc/nginx
       - /var/log/nginx:/var/log/nginx
       - /opt/dist:/opt/dist:ro
     ports:
@@ -54,6 +54,7 @@ services:
       - "8000:8000"
     volumes:
       - portainer_data:/data
+      - "/var/run/docker.sock:/var/run/docker.sock"
 volumes:
   portainer_data:
 
