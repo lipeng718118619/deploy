@@ -19,7 +19,7 @@ services:
       - wordpress
       - db
   wordpress:
-    image: wordpress:5.8.1
+    image: wordpress:5.8.2
     restart: always
     ports:
       - "8001:80"
